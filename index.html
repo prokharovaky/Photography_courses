@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>TestBlock</title>
+</head>
+<body>
+    <header>
+        <div class="Logo">Title</div>
+        <div class="container">
+            <div class="menu">
+                <p>Об обучении</p>
+                <p>Для кого</p>
+                <p>Результаты</p>
+                <p>Преимущества</p>
+                <p>Условия</p>
+            </div>
+            <div class="takePartButton"><a href="#">Записаться</a></div>
+            <div class="burger-menu">
+                <span class="burger-menu-icon">&#9776;</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="content">
+            <div class="content_header">Если ты:</div>
+            <div class="statements">
+                <div class="statement">
+                    <div class="number">01</div>
+                    <p class="name">Новичок</p>
+                    <p class="name_description">Желающий получить надежные основы и навыки</p>
+                </div>
+                <div class="statement">
+                    <div class="number">02</div>
+                    <p class="name">ТОП-МЕНЕДЖЕР</p>
+                    <p class="name_description">Стремящийся расширить свои навыки в сфере визуальной коммуникации</p>
+                </div>
+                <div class="statement">
+                    <div class="number">03</div>
+                    <p class="name">ПРЕДПРИНИМАТЕЛЬ</p>
+                    <p class="name_description">Который хочет сделать профессиональные фото для своего бизнеса и продвижения</p>
+                </div>
+                <div class="statement">
+                    <div class="number">04</div>
+                    <p class="name">ОПЫТНЫЙ ФОТОГРАФ</p>
+                    <p class="name_description">Желающий совершенствовать свое мастерство и открывать новые горизонты в фотографии</p>
+                </div>
+            </div> 
+            <a class="bigButton" href="#">Записаться на курс</a>          
+        </div>
+    </main>
+
+    <footer>
+        <div class="firstline"><div class="Logo">Title</div><div class="takePartButton"><a href="#">Записаться</a></div></div>
+        <div class="secondline"><div class="menu">
+            <p>Об обучении</p>
+            <p>Для кого</p>
+            <p>Результаты</p>
+            <p>Преимущества</p>
+            <p>Условия</p>
+        </div></div>
+        <div class="thirdline">
+            <p class="footer_description">Онлайн тренинг по фотографиям........</p>
+            <div class="contacts">
+                <div class="social">
+                    <a class="socialIcon" href="#"><img src="./images//fb_blue.png"></a>
+                    <a class="socialIcon" href="#"><img src="./images/inst_blue.png"></a>
+                    <a class="socialIcon" href="#"><img src="./images/tg_blue.png"></a>
+                </div>
+                <a class="phone" href="tel:6832671378"><p class="phoneNumber">7237893318</p></a> 
+            </div>
+        </div>
+    </footer>   
+    <div class="footer_side">Copyright © 2010-2024.<br> Все права защищены.</div>
+    <div class="side">Для кого подходит курс</div>
+</body>
+</html>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var burgerMenu = document.querySelector('.burger-menu');
+        var menu = document.querySelector('.menu');
+        
+        function toggleMenu() {
+            if (menu.style.display === 'flex') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'flex';
+            }
+        }
+        
+        function checkScreenWidth() {
+            if (window.innerWidth > 1240) {
+                menu.style.display = 'flex';
+            } else if (!menu.classList.contains('open')) {
+                menu.style.display = 'none';
+            }
+        }
+        
+        checkScreenWidth();
+        
+        burgerMenu.addEventListener('click', function() {
+            toggleMenu();
+        });
+
+        window.addEventListener('resize', checkScreenWidth);
+        
+        var menuItems = menu.querySelectorAll('p');
+        menuItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                menu.style.display = 'none';
+            });
+        });
+    });
+</script>
